@@ -55,8 +55,10 @@ WattSaver **auto-detects your CPU** and adapts its profiles to your hardware. It
 |------------|-------------|-----------|-------|
 | Intel 2nd-3rd gen (Sandy/Ivy Bridge) | Yes | Yes | Full support |
 | Intel 4th-9th gen (Haswell-Coffee Lake) | Yes | Yes | Best undervolt support |
-| Intel 10th gen+ (Ice Lake and newer) | Yes | Maybe | Undervolt may be locked by firmware (Plundervolt mitigation). Check BIOS for "Overclocking" or "Voltage Offset". |
-| AMD Ryzen | Yes | No | Use `acpi-cpufreq` or `amd-pstate`. Undervolt section hidden. |
+| Intel 10th-11th gen (Ice/Tiger Lake) | Yes | Maybe | Undervolt often locked by firmware (Plundervolt mitigation). Check BIOS for "Overclocking" or "Voltage Offset". |
+| Intel 12th-14th gen (Alder/Raptor Lake) | Yes | Unlikely | Hybrid architecture (P+E cores). Undervolt locked on most laptops. Frequency capping still very useful. |
+| Intel Core Ultra (Meteor/Arrow/Lunar Lake) | Yes | No | Undervolt locked by firmware. Frequency profiles and GPU switching still work. Built-in power management is better but capping turbo still saves battery. |
+| AMD Ryzen | Yes | No | Use `acpi-cpufreq` or `amd-pstate`. Undervolt section hidden. Consider [ryzenadj](https://github.com/FlyGoat/RyzenAdj) for power limits. |
 
 ## Installation
 
