@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=WattSaver
+Comment=CPU power profile manager
+Exec=/usr/local/bin/wattsaver
+Icon=power-profile-balanced-symbolic
+Terminal=false
+Categories=System;Utility;
+X-GNOME-Autostart-enabled=true
+X-GNOME-Autostart-Delay=3
