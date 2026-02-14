@@ -71,18 +71,25 @@ bash install.sh
 ```
 
 The installer will:
-1. Install Python dependencies (`gir1.2-ayatanaappindicator3-0.1`)
-2. Ask your preferred authentication policy
-3. Copy files to `/opt/wattsaver/`
-4. Install the polkit policy for privilege escalation
-5. Set up autostart on login
-6. Create a `wattsaver` command in your PATH
+1. Check all dependencies and install any that are missing (supports apt, dnf, pacman)
+2. Verify everything works with actual Python import tests
+3. Ask your preferred authentication policy
+4. Copy files to `/opt/wattsaver/`
+5. Install the polkit policy for privilege escalation
+6. Set up autostart on login and create a `wattsaver` command in your PATH
+
+> **Already installed?** Re-running `bash install.sh` will fix missing dependencies without requiring a full reinstall.
 
 ### Run Without Installing
 
 ```bash
-# Install the one required dependency
-sudo apt install gir1.2-ayatanaappindicator3-0.1
+# Install dependencies
+# Ubuntu/Debian:
+sudo apt install gir1.2-ayatanaappindicator3-0.1 python3-gi gir1.2-gtk-3.0
+# Fedora:
+sudo dnf install libayatana-appindicator-gtk3 python3-gobject gtk3
+# Arch:
+sudo pacman -S libayatana-appindicator python-gobject gtk3
 
 # Run directly
 python3 wattsaver.py
